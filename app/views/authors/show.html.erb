@@ -1,0 +1,12 @@
+<h1><%= @author.to_s %></h1>
+<%= link_to 'Edit', edit_author_path(@author) %>
+<h3>Books</h3>
+<ul>
+	<% @author.books.each do |book| %>
+	<li><%= link_to book.title, book_path(book) %></li>
+	<% end %>
+</ul>
+<br>
+<p><%= link_to 'Add Book', new_book_path %></p>
+<p><%= link_to 'Delete Author', @author,method: 'delete', data: {confirm: 'Are you sure?'}%></p>
+<p><%= link_to 'Go back to all authors', authors_path %></p>

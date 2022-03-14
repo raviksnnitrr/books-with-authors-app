@@ -1,0 +1,9 @@
+<h3>Add Book</h3>
+<%= form_for(@book) do |form| %>
+  <p>Title: <%= form.text_field :title %></p>
+  <p>ISBN: <%= form.text_field :isbn %></p>
+  <p>Description: <%= form.text_field :description %></p>
+
+  <p>Author: <%= form.select :author_id, Author.all.map { |author| [ author.to_s, author.id ] } %></p>
+  <%= form.submit %>
+<% end %>

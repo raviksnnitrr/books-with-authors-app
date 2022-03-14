@@ -1,0 +1,9 @@
+<h1><%= @book.title %></h1>
+<%= link_to 'Edit', edit_book_path(@book) %>
+<p><b>ISBN:</b> <%= @book.isbn %></p>
+<p><b>Description:</b> <%= @book.description %></p>
+
+<h4>Author: <%= link_to @book.author.to_s, author_path(@book.author) %></h4>
+
+<p><%= link_to 'Delete', @book, method: 'delete', data: { confirm: 'Are you sure?' }%></p>
+<p><%= link_to 'Go back to author page', author_path(@book.author) %></p>
